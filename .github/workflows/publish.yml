@@ -21,19 +21,21 @@ jobs:
 
       # Check if the vue-file-upload version already exists on npm
       - name: Check Version Existence
-        id: check_version
+        id: check_vue_version
         run: |
           if npm show @canopassoftware/vue-file-upload@1.0.8; then
             echo "Version already published. Skipping npm publish."
-            echo "::set-output name=skip_publish::true"
+            echo "::set-output name=skip_vue_publish::true"
           else
-            echo "::set-output name=skip_publish::false"
+            echo "::set-output name=skip_vue_publish::false"
           fi
 
       # Publish only if the vue-file-upload version check passed
       - name: Publish to npm
-        if: steps.check_version.outputs.skip_publish != true
-        run: npm publish --access public
+        if: steps.check_vue_version.outputs.skip_vue_publish != 'true'
+        run: |
+          cd vue
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -52,18 +54,20 @@ jobs:
 
       # Check if the react-file-upload version already exists on npm
       - name: Check Version Existence
-        id: check_version
+        id: check_react_version
         run: |
           if npm show @canopassoftware/react-file-upload@1.2.0; then
             echo "Version already published. Skipping npm publish."
-            echo "::set-output name=skip_publish::true"
+            echo "::set-output name=skip_react_publish::true"
           else
-            echo "::set-output name=skip_publish::false"
+            echo "::set-output name=skip_react_publish::false"
           fi
 
       # Publish only if the react-file-upload version check passed
       - name: Publish to npm
-        if: steps.check_version.outputs.skip_publish != true
-        run: npm publish --access public
+        if: steps.check_react_version.outputs.skip_react_publish != 'true'
+        run: |
+          cd react
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
