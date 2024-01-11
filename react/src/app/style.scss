@@ -1,0 +1,64 @@
+@mixin gradient-striped($color: rgba(255, 255, 255, 0.15), $angle: 45deg) {
+    background-image: -webkit-linear-gradient(
+      $angle,
+      $color 25%,
+      transparent 25%,
+      transparent 50%,
+      $color 50%,
+      $color 75%,
+      transparent 75%,
+      transparent
+    );
+    background-image: -o-linear-gradient(
+      $angle,
+      $color 25%,
+      transparent 25%,
+      transparent 50%,
+      $color 50%,
+      $color 75%,
+      transparent 75%,
+      transparent
+    );
+    background-image: linear-gradient(
+      $angle,
+      $color 25%,
+      transparent 25%,
+      transparent 50%,
+      $color 50%,
+      $color 75%,
+      transparent 75%,
+      transparent
+    );
+  }
+  
+  @-webkit-keyframes progress-bar-stripes {
+    from {
+      background-position: 40px 0;
+    }
+    to {
+      background-position: 0 0;
+    }
+  }
+  
+  @keyframes progress-bar-stripes {
+    from {
+      background-position: 40px 0;
+    }
+    to {
+      background-position: 0 0;
+    }
+  }
+  
+  @mixin animation($animation) {
+    -webkit-animation: $animation;
+    -o-animation: $animation;
+    animation: $animation;
+  }
+  .progress.active .progress-bar {
+    @include animation(progress-bar-stripes 2s linear infinite);
+  }
+  .progress-striped .progress-bar {
+    @include gradient-striped;
+    background-size: 40px 40px;
+  }
+  

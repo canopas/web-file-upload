@@ -1,0 +1,69 @@
+name: Publish Package to npmjs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  vue-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+      - run: |
+          cd vue
+          npm ci
+          npm run build
+
+      # Check if the vue-file-upload version already exists on npm
+      - name: Check Version Existence
+        id: check_version
+        run: |
+          if npm show @canopassoftware/vue-file-upload@1.0.8; then
+            echo "Version already published. Skipping npm publish."
+            echo "::set-output name=skip_publish::true"
+          else
+            echo "::set-output name=skip_publish::false"
+          fi
+
+      # Publish only if the vue-file-upload version check passed
+      - name: Publish to npm
+        if: steps.check_version.outputs.skip_publish != true
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  react-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+      - run: |
+          cd react
+          npm ci
+          npm run build
+
+      # Check if the react-file-upload version already exists on npm
+      - name: Check Version Existence
+        id: check_version
+        run: |
+          if npm show @canopassoftware/react-file-upload@1.2.0; then
+            echo "Version already published. Skipping npm publish."
+            echo "::set-output name=skip_publish::true"
+          else
+            echo "::set-output name=skip_publish::false"
+          fi
+
+      # Publish only if the react-file-upload version check passed
+      - name: Publish to npm
+        if: steps.check_version.outputs.skip_publish != true
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

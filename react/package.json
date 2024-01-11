@@ -1,0 +1,62 @@
+{
+  "name": "@canopassoftware/react-file-upload",
+  "version": "1.2.0",
+  "description": "Show the preview of file and manage files data to upload",
+  "main": "index.umd.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canopas/react-file-upload.git"
+  },
+  "keywords": [
+    "file-upload",
+    "image-upload",
+    "file-management",
+    "file-preview",
+    "image-preview"
+  ],
+  "author": "dharti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/canopas/react-file-upload/issues"
+  },
+  "homepage": "https://github.com/canopas/react-file-upload#readme",
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run build-css && vite build && cp -r ./dist/* ./",
+    "start": "next start",
+    "build-only": "next build",
+    "lint": "next lint",
+    "build-css": "tailwindcss -i ./src/app/globals.css -o ./dist/css/output.css --minify && cp ./src/app/style.scss ./dist/css/style.scss"
+  },
+  "dependencies": {
+    "next": "^14.0.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@types/node": "^20",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.0",
+    "postcss": "^8",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.6",
+    "tailwindcss": "^3",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.11"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "files": [
+    "./index.mjs",
+    "./index.umd.js",
+    "./style.css"
+  ]
+}

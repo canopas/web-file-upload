@@ -1,0 +1,29 @@
+name: Run lint in vue and react
+
+on:
+  push:
+
+jobs:
+  vue-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+      - run: |
+          cd vue
+          npm ci
+          npm run lint
+
+  react-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+      - run: |
+          cd react
+          npm ci
+          npm run lint
