@@ -1,3 +1,5 @@
+<p align="center"><a href="https://canopas.com/contact"><img src="./assets/images/banner.png"></a></p>
+
 # Web File Management with Preview - Fully Customized
 
 A versatile and user-friendly file management system built for Vue and React that allows single and multiple file uploading with a preview feature, returning an array of selected files. It supports custom designs by overriding the style classes.
@@ -32,17 +34,19 @@ Feel free to explore each folder for specific information about Vue and React!
 
 ## Table of Contents
 
-- [Features](#features)
-- [Installation](#installation)
-- [Examples](#examples)
-  - [Canvas View](#canvas-view)
-  - [Square View](#square-view)
-  - [Horizontal Long Square View](#horizontal-long-square-view)
-  - [Circular View](#circular-view)
-  - [Over-ride CSS](#over-ride-css)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact Information](#contact-information)
+  - [Features](#features)
+  - [Installation](#installation)
+    - [Vue](#vue)
+    - [React](#react)
+  - [Examples](#examples)
+    - [Canvas View](#canvas-view)
+    - [Square View](#square-view)
+    - [Horizontal Long Square View](#horizontal-long-square-view)
+    - [Circular View](#circular-view)
+    - [Over-ride CSS](#over-ride-css)
+  - [Contributing](#contributing)
+  - [Credits](#credits)
+  - [License](#license)
 
 ---
 
@@ -164,12 +168,14 @@ We welcome contributions from the community. To contribute to this project, plea
 
 ---
 
-## License
+## Credits
 
-This project is licensed under the [MIT](https://github.com/canopas/web-file-upload/blob/main/LICENSE).
+This repository is owned and maintained by the [Canopas team](https://canopas.com/). If you are interested in building web apps or designing products, please let us know. We'd love to hear from you!
+
+<a href="https://canopas.com/contact"><img src="./assets/images/cta.png" width=300></a>
 
 ---
 
-## Contact Information
+## License
 
-Web file upload is owned and maintained by the [Canopas team](https://canopas.com/). You can reach out them on Github at [canopas](https://github.com/canopas) for questions or need support.
+This project is licensed under the [MIT](https://github.com/canopas/web-file-upload/blob/main/LICENSE).
