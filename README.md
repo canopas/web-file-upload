@@ -34,11 +34,6 @@ Feel free to explore each folder for specific information about Vue and React!
 
 ## Table of Contents
 
-- [Web File Management with Preview - Fully Customized](#web-file-management-with-preview---fully-customized)
-    - [The library provides support for Vue and React. Each has its own set of features and information. Explore the individual folders for more details.](#the-library-provides-support-for-vue-and-react-each-has-its-own-set-of-features-and-information-explore-the-individual-folders-for-more-details)
-  - [Vue File Upload](#vue-file-upload)
-  - [React File Upload](#react-file-upload)
-  - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Installation](#installation)
     - [Vue](#vue)
